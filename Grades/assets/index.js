@@ -1,9 +1,9 @@
-const generateArray = (length, max, min) => (
+const generateArray = (length, max) => (
     [...new Array(length)]
-      .map(() => (Math.round(Math.random() * max) + min))
+      .map(() => (Math.round(Math.random() * max)))
   );
 
-const grades = generateArray(12, 100, 1);
+const grades = generateArray(12, 100);
 console.log(grades);
 
 // Выводим средний балл студентов
@@ -12,7 +12,7 @@ console.log(grades);
 // вопрос по length
 
 const getAverageGrade = () => {
-    let sum = grades.reduce((sum, current) => sum + current);
+    let sum = grades.reduce((sum, current) => sum + current, 0); 
     let length = grades.length;
     console.log(Math.round(sum / length));
 };
@@ -20,13 +20,11 @@ getAverageGrade();
 
 // Выводим максимальный балл среди студентов
 
-// ???????????????????????????????????????????????????????????
-// вопрос по 101
-
 const getHighestGrade = () => { 
     const gradesSorted = grades.sort(function(a, b) {
     return (a - b)});
     console.log(gradesSorted[gradesSorted.length - 1]);
+    console.log(gradesSorted);
 };
 getHighestGrade();
 
@@ -63,3 +61,29 @@ const showBadStudents = () => {
 showBadStudents();
 
 // Преобразуем числовые оценки в буквенные (формат A/B/C/D/E)
+
+
+const showLetterGrades = (grades) => {
+    switch (grades) {
+        case (80 >= grades <= 100):
+            grades = "A";
+            break;
+        case (60 >= grades <= 79):
+            grades = "B";
+            break;
+        case (40 >= grades <= 59):
+            grades = "C";
+            break;
+        case 20 >= grades <= 39:
+            grades = "D";
+            break;
+        case grades < 20:
+            grades = "E";
+            break;
+        default:
+            grades = "Undefined";
+}
+console.log(grades);
+}
+showLetterGrades();
+
