@@ -62,53 +62,22 @@ showBadStudents(grades);
 
 const showLetterGrades = (grades) => {
     const letterGrades = grades.map(function (grade) {
-        switch (grade) {
-        case (80 <= grade && grade <= 100):
+        if (grade >= 80 && grade <= 100)
         return "A";
-        // break;
-        case (60 <= grade && grade <= 79):
+
+        if (grade >= 60 && grade <= 79)
         return "B";
-        // break;
-        case (40 <= grade && grade <= 59):
+
+        if (grade >= 40 && grade <= 59)
         return "C";
-        // break;
-        case (20 <= grade && grade <= 39):
+
+        if (grade >= 20 && grade <= 39)
         return "D";
-        // break;
-        case (grade < 20):
-        return "E"
-        // break;
-        default:
-        return "Error"
-        }}
+        
+        if (grade < 20)
+        return "E";
+       }
     )
     console.log(letterGrades);
     }
     showLetterGrades(grades);
-
-
-
-    //     switch (grade) {
-    //         case 80 >= grade <= 100:
-    //             return "A";
-    //             break;
-    //         case 60 >= grade <= 79:
-    //             return "B";
-    //             break;
-    //         case 40 >= grade <= 59:
-    //             return "C";
-    //             break;
-    //         case 20 >= grade <= 39:
-    //             return "D";
-    //             break;
-    //         case grade < 20:
-    //             return "E";
-    //             break;
-    //         default:
-    //             return "Undefined";
-    // }
-//     })
-// console.log(letterGrades);
-// // }
-// // showLetterGrades(grades);
-
