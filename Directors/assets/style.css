@@ -1,8 +1,21 @@
 .Directors{
+width:800px;
 display: flex;
 flex-direction: column;
+flex-wrap:nowrap;
+margin:auto;
 }
 
 .name{
-    font-weight:bold ;
+    font-weight:bold;
+}
+
+.title{
+    text-align:center;
+}
+
+.List{
+    font-weight:bold;
+    text-align:center;
+    font-size:x-large;
 }
