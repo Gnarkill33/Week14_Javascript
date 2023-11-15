@@ -65,16 +65,16 @@ const showLetterGrades = (grades) => {
         if (grade >= 80 && grade <= 100)
         return "A";
 
-        if (grade >= 60 && grade <= 79)
+        else if (grade >= 60 && grade <= 79)
         return "B";
 
-        if (grade >= 40 && grade <= 59)
+        else if (grade >= 40 && grade <= 59)
         return "C";
 
-        if (grade >= 20 && grade <= 39)
+        else if (grade >= 20 && grade <= 39)
         return "D";
         
-        if (grade < 20)
+        else if (grade < 20)
         return "E";
        }
     )
