@@ -47,12 +47,42 @@ const directorsInfo = [
 
 // Элементы DOM
 
-  const list = document.querySelector(".List");
+  const list = document.querySelector(".directors__list");
+  const moviesList = document.querySelector ('.movies__list');
 
-// Функция?
+// 
+// ПОСМОТРЕТЬ КАК ДОБАВЛЯЮТСЯ КЛАССЫ
 
   directorsInfo.forEach(item => {
-    console.log(item);
-    
+
+// Создаем пункты списка 
+    const directorsList = document.createElement('li');
+    list.append(directorsList);
+    // directorsList.classList.add('directors__li');
+
+// Добавляем имена
+    const directorsName = document.createElement('h3');
+    directorsList.append(directorsName);
+    directorsName.textContent = item.name;
+
+// Добавляем карьеру и ссылку
+    const directorsCareerAndLink = document.createElement('div');
+    const directorCareer = document.createElement('p');
+    const directorLinkContainer = document.createElement('p')
+    // !! const directorLink = document.createElement('a');
+    directorsList.append(directorsCareerAndLink);
+    directorsCareerAndLink.append(directorCareer);
+    directorsCareerAndLink.append(directorLinkContainer);
+    // !! directorLinkContainer.append(directorLink);
+    directorCareer.textContent = item.career;
+    directorLinkContainer.textContent = "Фильмография";
+    // !! directorLink.textContent = item.films;
   }
-    )
+  )
+  
+// Добавляем лучшие фильмы
+
+    topFilmsList = directorsInfo.map(item => {
+      return item.top_rated_film;    
+    })
+    moviesList.textContent = topFilmsList.join(', ');
