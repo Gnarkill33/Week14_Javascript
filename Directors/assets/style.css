@@ -1,21 +1,37 @@
-/* .Directors{
-width:800px;
+*{
+    color:rgb(199, 197, 197);
+}
+
+.directors, .movies{
 display: flex;
 flex-direction: column;
-flex-wrap:nowrap;
-margin:auto;
+align-items: center;
+flex-wrap:wrap;
+margin:0px 100px;
+} 
+
+.movies__list{
+    font-weight:bold;
 }
 
 .name{
     font-weight:bold;
 }
 
-.title{
-    text-align:center;
+.directors__list{
+
 }
 
-.List{
-    font-weight:bold;
-    text-align:center;
-    font-size:x-large; */
+.director-career{
+
+}
+
+.career-link{
+
+}
+
+.container{
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20191113/pngtree-blue-film-technology-film-background-image_322042.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }

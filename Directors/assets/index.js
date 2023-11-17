@@ -1,5 +1,5 @@
-// Массив объектов
 
+// Массив объектов
 const directorsInfo = [
     {
       name: 'Стивен Спилберг',
@@ -45,7 +45,17 @@ const directorsInfo = [
     },
   ];
 
-// Элементы DOM
+// Добавляем недостающий объект в массив 
+let newDirector = {
+      name: 'Виктор Шамиров',
+      career: 'Режиссер, Сценарист, Актёр, Продюсер, Монтажёр',
+      films: 'https://www.film.ru/person/viktor-shamirov',
+      top_rated_film: 'Со мною вот что происходит'
+}
+
+directorsInfo.splice(2, 0, newDirector);
+
+// Находим элементы DOM
 
   const list = document.querySelector(".directors__list");
   const moviesList = document.querySelector ('.movies__list');
@@ -58,31 +68,33 @@ const directorsInfo = [
 // Создаем пункты списка 
     const directorsList = document.createElement('li');
     list.append(directorsList);
-    // directorsList.classList.add('directors__li');
+    directorsList.classList.add('director-li');
 
-// Добавляем имена
+// Добавляем имена режиссеров
     const directorsName = document.createElement('h3');
     directorsList.append(directorsName);
+    directorsName.classList.add('director-name');
     directorsName.textContent = item.name;
 
 // Добавляем карьеру и ссылку
     const directorsCareerAndLink = document.createElement('div');
     const directorCareer = document.createElement('p');
-    const directorLinkContainer = document.createElement('p')
-    // !! const directorLink = document.createElement('a');
+    const directorLinkContainer = document.createElement('p');
+
+    directorCareer.classList.add('director-career');
+    directorsCareerAndLink.classList.add('career-link');
+    
     directorsList.append(directorsCareerAndLink);
     directorsCareerAndLink.append(directorCareer);
     directorsCareerAndLink.append(directorLinkContainer);
-    // !! directorLinkContainer.append(directorLink);
+
     directorCareer.textContent = item.career;
     directorLinkContainer.textContent = "Фильмография";
-    // !! directorLink.textContent = item.films;
   }
   )
   
 // Добавляем лучшие фильмы
-
     topFilmsList = directorsInfo.map(item => {
       return item.top_rated_film;    
     })
-    moviesList.textContent = topFilmsList.join(', ');
+    moviesList.textContent = `"${topFilmsList.join('", "')}"`;
