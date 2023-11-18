@@ -1,4 +1,3 @@
-
 // Массив объектов
 const directorsInfo = [
     {
@@ -52,18 +51,14 @@ let newDirector = {
       films: 'https://www.film.ru/person/viktor-shamirov',
       top_rated_film: 'Со мною вот что происходит'
 }
-
 directorsInfo.splice(2, 0, newDirector);
 
 // Находим элементы DOM
-
   const list = document.querySelector(".directors__list");
   const moviesList = document.querySelector ('.movies__list');
 
-// 
-// ПОСМОТРЕТЬ КАК ДОБАВЛЯЮТСЯ КЛАССЫ
-
-  directorsInfo.forEach(item => {
+// Передаем инфо объектов массива в элементы DOM
+directorsInfo.forEach(item => {
 
 // Создаем пункты списка 
     const directorsList = document.createElement('li');
