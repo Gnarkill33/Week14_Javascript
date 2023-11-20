@@ -76,20 +76,22 @@ directorsInfo.forEach(item => {
     const directorCareer = document.createElement('p');
     const directorLinkContainer = document.createElement('p');
     const divider = document.createElement('hr');
-    const directorLink = document.createElement('a'); // создаем элемент a
-    directorLink.setAttribute = ('href', directorsInfo["films"]); // пытаюсь присвоить атрибут
+    const directorLink = document.createElement('a');
+    directorLink.setAttribute ('href', item.films);
 
     directorCareer.classList.add('director-career');
     directorsCareerAndLink.classList.add('career-link');
+    directorLinkContainer.classList.add('director-link');
     
     directorsList.append(directorsCareerAndLink);
     directorsList.append(divider);
     directorsCareerAndLink.append(directorCareer);
     directorsCareerAndLink.append(directorLinkContainer);
-    directorLinkContainer.prepend(directorLink); // удочеряем элемент a в элемент p (Фильмография)
+    directorLinkContainer.append(directorLink);
 
+    
     directorCareer.textContent = item.career;
-    directorLinkContainer.textContent = "Фильмография";
+    directorLink.textContent = "Фильмография"; 
   }
   )
   

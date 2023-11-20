@@ -12,22 +12,16 @@ margin:0px 100px;
 
 .movies__list{
     font-weight:bold;
+    text-align: center;
 }
 
 .name{
     font-weight:bold;
 }
 
-.directors__list{
-
-}
-
-.director-career{
-
-}
-
-.career-link{
-
+.director-link{
+    display: flex;
+    justify-content: center;
 }
 
 .container{
